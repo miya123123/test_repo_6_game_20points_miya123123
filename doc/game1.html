@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>Game1 Click Speed</title></head>
+<body>
+<h1>Click Speed</h1>
+<p>Click the button as many times as you can in 5 seconds.</p>
+<button id="btn">Click me!</button>
+<div id="count">0</div>
+<script>
+let count=0;const btn=document.getElementById('btn');
+btn.onclick=()=>{count++;document.getElementById('count').textContent=count;};
+setTimeout(()=>{btn.disabled=true;alert('Score: '+count);},5000);
+</script>
+</body></html>

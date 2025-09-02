@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game12 Scramble</title></head>
+<body>
+<h1>Word Scramble</h1>
+<div id="scr"></div><input id="ans"><button id="check">Check</button>
+<script>
+const words=['earth','water','music','light'];const w=words[Math.floor(Math.random()*words.length)];scr.textContent=w.split('').sort(()=>Math.random()-0.5).join('');
+check.onclick=()=>alert(ans.value===w?'Correct':'Wrong');
+</script>
+</body></html>

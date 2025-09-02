@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game15 Find Circle</title></head>
+<body>
+<h1>Find the Circle</h1>
+<canvas id="cv" width="200" height="200" style="border:1px solid"></canvas>
+<script>
+const ctx=cv.getContext('2d');let shapes=[];for(let i=0;i<5;i++){let type=Math.random()>0.5?'rect':'circle';let x=Math.random()*160+20,y=Math.random()*160+20;shapes.push({type,x,y});draw(shapes[i]);}function draw(s){ctx.beginPath();if(s.type==='rect')ctx.rect(s.x-10,s.y-10,20,20);else ctx.arc(s.x,s.y,10,0,6.28);ctx.stroke();}
+cv.onclick=e=>{let r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;let hit=shapes.find(s=>s.type==='circle'&&Math.hypot(s.x-x,s.y-y)<10);alert(hit?'Correct':'Wrong');};
+</script>
+</body></html>

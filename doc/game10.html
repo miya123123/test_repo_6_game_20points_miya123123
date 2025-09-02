@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game10 Mole</title></head>
+<body>
+<h1>Whack-a-Mole</h1>
+<div id="g"></div><div>Score:<span id="s">0</span></div>
+<script>
+for(let i=0;i<9;i++){let b=document.createElement('button');b.style.width='60px';b.style.height='60px';b.id='b'+i;g.appendChild(b);}let score=0,active;
+function set(){if(active)document.getElementById(active).textContent='';active='b'+Math.floor(Math.random()*9);document.getElementById(active).textContent='●';}
+setInterval(set,800);g.onclick=e=>{if(e.target.id===active){score++;s.textContent=score;e.target.textContent='';active=null;}};
+</script>
+</body></html>

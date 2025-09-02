@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game4 Memory</title></head>
+<body>
+<h1>Remember the digits</h1>
+<div id="seq"></div>
+<input id="ans"><button id="check">Check</button>
+<script>
+let s='';for(let i=0;i<3;i++)s+=Math.floor(Math.random()*10);
+seq.textContent=s;setTimeout(()=>seq.textContent='',2000);
+check.onclick=()=>{alert(ans.value===s?'Correct':'Wrong');};
+</script>
+</body></html>

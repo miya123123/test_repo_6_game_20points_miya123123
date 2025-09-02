@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game16 HigherLower</title></head>
+<body>
+<h1>Higher or Lower</h1>
+<div id="cur"></div>
+<button id="hi">Higher</button><button id="lo">Lower</button>
+<script>
+let cur=Math.floor(Math.random()*50);document.getElementById('cur').textContent=cur;
+function guess(dir){let next=Math.floor(Math.random()*50);let correct=(dir==='hi'&&next>cur)||(dir==='lo'&&next<cur);alert('Next:'+next+' '+(correct?'Correct':'Wrong'));cur=next;document.getElementById('cur').textContent=cur;}
+hi.onclick=()=>guess('hi');lo.onclick=()=>guess('lo');
+</script>
+</body></html>

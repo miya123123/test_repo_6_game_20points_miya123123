@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game5 Typing</title></head>
+<body>
+<h1>Typing Speed</h1>
+<div id="word"></div><input id="in"><button id="go">Start</button>
+<script>
+const words=['apple','brain','cloud','dance'];let start;
+go.onclick=()=>{const w=words[Math.floor(Math.random()*words.length)];word.textContent=w;in.value='';start=Date.now();in.onkeyup=()=>{if(in.value===w){alert('Time '+(Date.now()-start)+'ms');}}}
+</script>
+</body></html>

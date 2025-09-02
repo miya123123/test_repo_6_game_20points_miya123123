@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game6 Math</title></head>
+<body>
+<h1>Addition Quiz</h1>
+<div id="q"></div><input id="a"><button id="c">Check</button>
+<script>
+function newQ(){x=Math.floor(Math.random()*50);y=Math.floor(Math.random()*50);q.textContent=x+' + '+y+' =';}
+let x,y;newQ();
+c.onclick=()=>{alert(parseInt(a.value)==x+y?'Correct':'Wrong');a.value='';newQ();};
+</script>
+</body></html>

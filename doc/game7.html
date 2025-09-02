@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game7 Color</title></head>
+<body>
+<h1>Color Match</h1>
+<p id="name"></p>
+<button id="r" style="background:red;width:50px;height:50px"></button>
+<button id="g" style="background:green;width:50px;height:50px"></button>
+<button id="b" style="background:blue;width:50px;height:50px"></button>
+<script>
+const colors=['red','green','blue'];let target;
+function set(){target=colors[Math.floor(Math.random()*3)];name.textContent='Click '+target;}
+[r,g,b].forEach(btn=>btn.onclick=()=>{alert(btn.id===target[0]?'Correct':'Wrong');set();});
+set();
+</script>
+</body></html>
