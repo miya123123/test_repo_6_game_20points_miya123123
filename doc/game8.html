@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game8 Arrows</title></head>
+<body>
+<h1>Arrow Memory</h1>
+<div id="seq"></div>
+<script>
+const dirs=['↑','↓','←','→'];let s='';for(let i=0;i<3;i++)s+=dirs[Math.floor(Math.random()*4)];seq.textContent=s;let idx=0;
+document.onkeydown=e=>{const map={ArrowUp:'↑',ArrowDown:'↓',ArrowLeft:'←',ArrowRight:'→'};if(map[e.key]===s[idx]){idx++;if(idx===3)alert('Success');}else alert('Fail');};
+setTimeout(()=>seq.textContent='',2000);
+</script>
+</body></html>

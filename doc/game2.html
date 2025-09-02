@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>Game2 Reaction</title></head>
+<body style="background:red;">
+<h1>Reaction Time</h1>
+<p>Wait for green then click anywhere!</p>
+<script>
+let start;
+setTimeout(()=>{document.body.style.background='green';start=Date.now();},Math.random()*3000+2000);
+document.body.onclick=()=>{if(start){alert('Time: '+(Date.now()-start)+'ms');}}
+</script>
+</body></html>

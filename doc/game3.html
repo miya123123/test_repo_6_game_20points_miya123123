@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game3 Guess</title></head>
+<body>
+<h1>Guess the Number</h1>
+<input id="in" type="number" min="1" max="100"><button id="b">Guess</button>
+<div id="msg"></div>
+<script>
+let n=Math.floor(Math.random()*100)+1;let tries=0;
+document.getElementById('b').onclick=()=>{tries++;let v=parseInt(document.getElementById('in').value);let m=v<n?'Low':v>n?'High':'Correct!';
+if(m==='Correct!')alert('You guessed in '+tries+' tries');
+else document.getElementById('msg').textContent=m;};
+</script>
+</body></html>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game11 RPS</title></head>
+<body>
+<h1>Rock Paper Scissors</h1>
+<button>Rock</button><button>Paper</button><button>Scissors</button>
+<script>
+const opts=['Rock','Paper','Scissors'];document.querySelectorAll('button').forEach((b,i)=>b.onclick=()=>{const c=Math.floor(Math.random()*3);alert('CPU '+opts[c]+'. '+(i===c?'Draw':(i-c+3)%3===1?'Win':'Lose'));});
+</script>
+</body></html>

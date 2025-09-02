@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game19 Prime</title></head>
+<body>
+<h1>Prime Check</h1>
+<div id="num"></div>
+<button id="yes">Prime</button><button id="no">Not</button>
+<script>
+function newNum(){n=Math.floor(Math.random()*50)+2;num.textContent=n;}let n;newNum();
+function isPrime(x){for(let i=2;i<=Math.sqrt(x);i++)if(x%i===0)return false;return true;}
+function ans(p){alert((p===isPrime(n))?'Correct':'Wrong');newNum();}
+yes.onclick=()=>ans(true);no.onclick=()=>ans(false);
+</script>
+</body></html>

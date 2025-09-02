@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game9 Avoid</title></head>
+<body>
+<canvas id="cv" width="200" height="200" style="border:1px solid"></canvas>
+<script>
+const ctx=cv.getContext('2d');let px=90;let bx=Math.random()*180;let by=0;let alive=true;
+function draw(){ctx.clearRect(0,0,200,200);ctx.fillRect(px,180,20,20);ctx.fillRect(bx,by,20,20);} 
+function step(){by+=2;if(by>200){by=0;bx=Math.random()*180;}if(by>160&&bx<px+20&&bx+20>px){alive=false;alert('Hit');}
+if(alive){draw();requestAnimationFrame(step);}}
+step();
+document.onkeydown=e=>{if(e.key==='ArrowLeft')px=Math.max(0,px-10);if(e.key==='ArrowRight')px=Math.min(180,px+10);};
+</script>
+</body></html>

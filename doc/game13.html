@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game13 TicTacToe</title></head>
+<body>
+<h1>Tic Tac Toe</h1>
+<table id="t"></table>
+<script>
+let board=Array(9).fill('');let turn='X';
+for(let i=0;i<9;i++){let cell=document.createElement('td');cell.style.width='40px';cell.style.height='40px';cell.style.border='1px solid';cell.onclick=()=>move(i,cell);t.appendChild(cell);if((i+1)%3===0)t.appendChild(document.createElement('tr'));}
+function move(i,cell){if(board[i])return;board[i]=turn;cell.textContent=turn;if(check(turn))return alert(turn+' wins');turn=turn==='X'?'O':'X';if(turn==='O')cpu();}
+function cpu(){let empty=board.map((v,i)=>v?null:i).filter(v=>v!=null);let i=empty[Math.floor(Math.random()*empty.length)];let c=t.querySelectorAll('td')[i];board[i]=turn;c.textContent=turn;if(check(turn))alert(turn+' wins');turn='X';}
+function check(p){return[0,3,6].some(i=>board[i]===p&&board[i+1]===p&&board[i+2]===p)||[0,1,2].some(i=>board[i]===p&&board[i+3]===p&&board[i+6]===p)||(board[0]===p&&board[4]===p&&board[8]===p)||(board[2]===p&&board[4]===p&&board[6]===p);}
+</script>
+</body></html>

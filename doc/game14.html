@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game14 Hangman</title></head>
+<body>
+<h1>Hangman</h1>
+<div id="word"></div><input id="letter" maxlength="1"><button id="guess">Guess</button><div id="wrong"></div>
+<script>
+const words=['chat','game','code'];const w=words[Math.floor(Math.random()*words.length)];let display=Array(w.length).fill('_');word.textContent=display.join(' ');let wrong='';
+guess.onclick=()=>{let l=letter.value;letter.value='';if(w.includes(l)){w.split('').forEach((c,i)=>{if(c===l)display[i]=l;});word.textContent=display.join(' ');if(!display.includes('_'))alert('Win');}else{wrong+=l+' ';document.getElementById('wrong').textContent=wrong;if(wrong.length>10)alert('Lose');}}
+</script>
+</body></html>

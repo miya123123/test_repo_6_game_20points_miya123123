@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game17 Memory Pair</title></head>
+<body>
+<h1>Match the Pairs</h1>
+<div id="board"></div>
+<script>
+let values=['A','A','B','B'].sort(()=>Math.random()-0.5);let first=null;values.forEach((v,i)=>{let b=document.createElement('button');b.textContent='?';b.onclick=()=>flip(b,i);board.appendChild(b);});
+function flip(btn,i){btn.textContent=values[i];btn.disabled=true;if(!first)first={btn,i};else{if(values[i]!==values[first.i]){setTimeout(()=>{btn.textContent='?';btn.disabled=false;first.btn.textContent='?';first.btn.disabled=false;first=null;},500);}else{first=null;}}
+}
+</script>
+</body></html>

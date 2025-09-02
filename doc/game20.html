@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game20 Sequence</title></head>
+<body>
+<h1>Sequence Puzzle</h1>
+<div id="seq"></div><input id="ans"><button id="check">Check</button>
+<script>
+let a=Math.floor(Math.random()*5)+1,b=Math.floor(Math.random()*5)+1;seq.textContent=a+', '+b+', ?';
+check.onclick=()=>{let v=parseInt(ans.value);alert(v===a+b?'Correct':'Wrong');a=b;b=v;seq.textContent=a+', '+b+', ?';ans.value='';};
+</script>
+</body></html>

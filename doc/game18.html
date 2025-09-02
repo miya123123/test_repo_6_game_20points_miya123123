@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><title>Game18 Catch Ball</title></head>
+<body>
+<h1>Catch the Ball</h1>
+<canvas id="cv" width="200" height="200" style="border:1px solid"></canvas>
+<script>
+const ctx=cv.getContext('2d');let x=100,y=100;function draw(){ctx.clearRect(0,0,200,200);ctx.beginPath();ctx.arc(x,y,10,0,6.28);ctx.fill();}
+function move(){x+=Math.random()*20-10;y+=Math.random()*20-10;x=Math.max(10,Math.min(190,x));y=Math.max(10,Math.min(190,y));draw();}
+setInterval(move,500);cv.onclick=e=>{let r=cv.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;if(Math.hypot(mx-x,my-y)<10)alert('Caught!');};draw();
+</script>
+</body></html>
